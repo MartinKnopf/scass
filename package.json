@@ -1,0 +1,31 @@
+{
+  "name": "scass",
+  "version": "0.0.0",
+  "private": true,
+  "description": "secure password management inspired by lesspass.com",
+  "license": "it's mine",
+  "author": "",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "repository": "",
+  "scripts": {
+    "start": "node app.js",
+		"test": "mocha"
+  },
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.0",
+    "express-history-api-fallback": "2.2.1",
+    "lesspass-render-password": "^0.1.0",
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": ">= 8.*"
+  },
+	"now": {
+		"type": "npm",
+		"alias": "scass"
+	}
+}

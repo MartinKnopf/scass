@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>scass</title>
+
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0" />
+    <meta NAME="Content-Language" CONTENT="en" />
+    <meta NAME="Author" CONTENT="Martin Knopf" />
+    <meta NAME="robots" content="all" />
+    <meta NAME="Copyright" CONTENT="(c) 2018 Martin Knopf" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata|Noto+Sans" rel="stylesheet">
+
+    <link integrity="" rel="stylesheet" href="style.css">
+    <script src="fetch.umd.js" async></script>
+    
+  </head>
+  <body>
+
+    <div class="content">
+
+			<div class="sites">
+				<span onclick="fill('github')">github</span>
+				<span onclick="fill('google')">google</span>
+				<span onclick="fill('twitter')">twitter</span>
+				<span onclick="fill('work')">work</span>
+				<span onclick="fill('now')">now</span>
+			</div>
+
+      <div>
+        <input type="text" id="site" name="v" placeholder="site"/>
+      </div>
+
+      <div>
+        <input type="password" name="v" placeholder="master password"/>
+      </div>
+
+      <div>
+        <input type="submit" id="submit" value="" onclick="document.submitform();"/>
+      </div>
+
+      <div>
+        <input type="text" name="r" />
+      </div>
+
+    </div>
+
+    <script>
+			document.fill = (v1) => {
+				document.getElementById('site').value = v1
+			}
+
+      document.submitform = () => {
+				let payload = {}
+
+				let inputs = [...document.getElementsByName('v')]
+
+				inputs.filter(input => ['text', 'password'].includes(input.type))
+					.forEach(input => payload[input.name] = input.value)
+
+				fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+					.then(res => res.text())
+					.then(body => {
+						let r = document.getElementsByName("r")[0]
+						r.value = body
+						r.select()
+					})
+      }
+    </script>
+    
+  </body>
+</html>
