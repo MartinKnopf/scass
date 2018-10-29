@@ -5,7 +5,9 @@ const generate = require('../routes/generate')
 describe('generate', () => {
 	it('should generate the same password for the same input', done => {
 		let req = {
-			body: 'abc123'
+			body: {
+				payload: 'abc123'
+			}
 		}
 		
 		let res = {

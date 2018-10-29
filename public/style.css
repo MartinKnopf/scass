@@ -77,3 +77,27 @@ input {
 	background-color: black;
 	color: white;
 }
+
+#show {
+	background: black;
+	background: url(img/eye.svg) no-repeat;
+	font-weight: bold;
+	background-size: 24px 24px;
+	background-position: center;
+	background-color: black;
+	color: white;
+}
+
+#result-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.copy, .show {
+	width: 10%;
+}
+
+.r {
+	width: 75%;
+}

@@ -33,44 +33,64 @@
 			</div>
 
       <div>
-        <input type="text" id="site" name="v" placeholder="site"/>
+        <input type="text" id="site" placeholder="site"/>
       </div>
 
       <div>
-        <input type="password" name="v" placeholder="master password"/>
+        <input type="password" id="master-password" placeholder="master password"/>
       </div>
 
       <div>
         <input type="submit" id="submit" value="" onclick="document.submitform();"/>
       </div>
 
-      <div>
-        <input type="text" name="r" />
+      <div id="result-container" style="display:none">
+				<span class="copy"><input type="submit" id="copy" value=""/></span>
+				<span class="r"><input type="password" id="r"/></span>
+				<span class="show"><input type="submit" id="show" value=""/></span>
       </div>
 
     </div>
 
     <script>
+			const module = { exports: {} }
+    </script>
+    <script src="copy-text-to-clipboard.js"></script>
+    <script>
+			let p
+
 			document.fill = (v1) => {
 				document.getElementById('site').value = v1
 			}
 
       document.submitform = () => {
-				let payload = {}
+				let payload = {
+					payload: document.getElementById('site').value + document.getElementById('master-password').value 
+				}
 
-				let inputs = [...document.getElementsByName('v')]
-
-				inputs.filter(input => ['text', 'password'].includes(input.type))
-					.forEach(input => payload[input.name] = input.value)
-
-				fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+				fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)})
 					.then(res => res.text())
 					.then(body => {
-						let r = document.getElementsByName("r")[0]
+						p = body
+						let r = document.getElementById("r")
+						r.style = ""
 						r.value = body
 						r.select()
+
+						document.getElementById('result-container').style = ""
 					})
       }
+
+      document.getElementById('copy').addEventListener('click', () => {
+				const copyTextToClipboard = module.exports
+				copyTextToClipboard(p)
+			})
+
+      document.getElementById('show').addEventListener('click', () => {
+				let r = document.getElementById('r')
+				if(r.type == 'password') r.type = 'text'
+				else r.type = 'password'
+			})
     </script>
     
   </body>

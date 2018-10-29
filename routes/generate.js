@@ -9,7 +9,7 @@ const options = {
 };
 
 module.exports = (req, res) => {
-	res.send(hash(JSON.stringify(req.body)));
+	res.send(hash(JSON.stringify(req.body.payload)));
 };
 
 const hash = data => {

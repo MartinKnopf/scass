@@ -12,7 +12,7 @@
   "repository": "",
   "scripts": {
     "start": "node app.js",
-		"test": "mocha"
+    "test": "mocha"
   },
   "devDependencies": {
     "body-parser": "^1.18.3",
@@ -24,8 +24,11 @@
   "engines": {
     "node": ">= 8.*"
   },
-	"now": {
-		"type": "npm",
-		"alias": "scass"
-	}
+  "now": {
+    "type": "npm",
+    "alias": "scass"
+  },
+  "dependencies": {
+    "copy-text-to-clipboard": "^1.0.4"
+  }
 }
