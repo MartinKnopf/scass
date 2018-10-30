@@ -39,7 +39,6 @@ div {
 	width: 64px;
 	height: 32px;
 	background-color: #f1f1f1;
-	border-radius: 20px;
 	transition: transform .1s ease-in-out;
 }
 
@@ -50,12 +49,12 @@ div {
 input {
 	padding: 0;
 	width: 100%;
-	border-radius: 20px;
 	border: 1px solid #ddd;
 	height: 38px;
 	text-indent: 20px;
 	background: white;
 	box-sizing: border-box;
+	box-shadow: none;
 }
 
 #submit {
