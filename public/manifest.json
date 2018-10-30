@@ -1,0 +1,11 @@
+{ 
+  "name": "SCASS - Stateless Password Manager", 
+  "short_name": "SCASS", 
+  "start_url": "/", 
+  "display": "standalone", 
+  "icons": [{ 
+    "src": "img/icon-1024x1024.png", 
+    "sizes": "1024x1024", 
+    "type": "image/png" 
+  }] 
+}
