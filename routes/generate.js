@@ -9,7 +9,9 @@ const options = {
 };
 
 module.exports = (req, res) => {
-	res.send(hash(JSON.stringify(req.body.payload)));
+	if(req.body.apiVersion == '1') {
+		res.send(hash(JSON.stringify(req.body.payload)));
+	}
 };
 
 const hash = data => {

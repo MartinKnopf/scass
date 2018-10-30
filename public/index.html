@@ -27,6 +27,8 @@
   <body>
 
     <div class="content">
+			
+			<h1>SCASS</h1>
 
 			<div class="sites">
 				<span onclick="fill('github')">github</span>
@@ -69,7 +71,8 @@
 
       document.submitform = () => {
 				let payload = {
-					payload: document.getElementById('site').value + document.getElementById('master-password').value 
+					apiVersion: '1',
+					/payload: document.getElementById('site').value + document.getElementById('master-password').value 
 				}
 
 				fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)})
