@@ -15,6 +15,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/img/favicon-96x96.png">
+		<link rel="apple-touch-icon" sizes="512x512" href="/img/icon-512x512.png">
 
 		<link rel="manifest" href="/manifest.json">
 
@@ -31,11 +32,11 @@
 			<h1>SCASS</h1>
 
 			<div class="sites">
-				<span onclick="fill('github')">github</span>
-				<span onclick="fill('google')">google</span>
-				<span onclick="fill('twitter')">twitter</span>
-				<span onclick="fill('work')">work</span>
-				<span onclick="fill('now')">now</span>
+				<span class="site-container"><span class="site" onclick="fill('github')">github</span></span>
+				<span class="site-container"><span class="site" onclick="fill('google')">google</span></span>
+				<span class="site-container"><span class="site" onclick="fill('twitter')">twitter</span></span>
+				<span class="site-container"><span class="site" onclick="fill('work')">work</span></span>
+				<span class="site-container"><span class="site" onclick="fill('now')">now</span></span>
 			</div>
 
       <div>
@@ -72,7 +73,7 @@
       document.submitform = () => {
 				let payload = {
 					apiVersion: '1',
-					/payload: document.getElementById('site').value + document.getElementById('master-password').value 
+					payload: document.getElementById('site').value + document.getElementById('master-password').value 
 				}
 
 				fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)})

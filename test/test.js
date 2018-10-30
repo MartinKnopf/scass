@@ -6,6 +6,7 @@ describe('generate', () => {
 	it('should generate the same password for the same input', done => {
 		let req = {
 			body: {
+				apiVersion: '1',
 				payload: 'abc123'
 			}
 		}

@@ -1,13 +1,8 @@
-FROM node:10
-
-RUN npm install -g npm
-
+FROM node:alpine
 WORKDIR /usr/src
-
-ADD . .
-
-RUN npm install
-
+COPY . .
+RUN npm ci
+RUN npm run test
+RUN npm uninstall -g npm
 EXPOSE 80
-
-CMD ["npm", "run", "start"]
+CMD ["node", "app.js"]

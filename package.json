@@ -11,7 +11,7 @@
   },
   "repository": "",
   "scripts": {
-    "start": "node app.js",
+    "start": "mocha --timeout 10000 && node app.js",
     "test": "mocha"
   },
   "devDependencies": {
