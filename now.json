@@ -2,7 +2,7 @@
   "version": 2,
   "name": "scass",
   "builds": [
-    { "src": "api", "use": "@now/node" }
+    { "src": "api/package.json", "use": "@now/node" }
   ],
   "routes": [
     { "src": "/(.*)", "continue": true, "headers" :
