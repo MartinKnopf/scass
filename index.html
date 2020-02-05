@@ -76,7 +76,7 @@
 					payload: document.getElementById('site').value + document.getElementById('master-password').value 
 				}
 
-				fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)})
+				fetch('/api/generate', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload)})
 					.then(res => res.text())
 					.then(body => {
 						p = body
