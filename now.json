@@ -5,7 +5,6 @@
     { "src": "generate/index.js", "use": "@now/node" }
   ],
   "routes": [
-    { "src": "/generate(.*)", "dest": "/generate" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
