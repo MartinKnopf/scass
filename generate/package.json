@@ -1,0 +1,21 @@
+{
+  "name": "scass",
+  "version": "0.0.0",
+  "private": true,
+  "description": "secure password management inspired by lesspass.com",
+  "license": "it's mine",
+  "author": "Martin Knopf",
+  "repository": "",
+  "scripts": {
+    "test": "echo no tests && exit 1"
+  },
+  "dependencies": {
+    "lesspass-render-password": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  },
+  "engines": {
+    "node": ">= 8.*"
+  }
+}
