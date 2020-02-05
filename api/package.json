@@ -7,7 +7,7 @@
   "author": "Martin Knopf",
   "repository": "",
   "scripts": {
-    "test": "echo no tests && exit 1"
+    "test": "mocha"
   },
   "dependencies": {
     "lesspass-render-password": "^0.1.0"

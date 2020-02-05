@@ -1,6 +1,6 @@
 const assert = require('assert')
 
-const generate = require('../routes/generate')
+const generate = require('../generate')
 
 describe('generate', () => {
 	it('should generate the same password for the same input', done => {
@@ -19,5 +19,5 @@ describe('generate', () => {
 		}
 
 		generate(req, res);
-	});
-});
+	})
+})
