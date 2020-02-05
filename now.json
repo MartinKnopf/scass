@@ -1,6 +1,9 @@
 {
   "version": 2,
   "name": "scass",
+  "builds": [
+    { "src": "api", "use": "@now/node" }
+  ],
   "routes": [
     { "src": "/(.*)", "continue": true, "headers" :
       { 
@@ -12,7 +15,7 @@
         "X-Content-Type-Options": "nosniff"
       }
     },
-    { "src": "/generate(.*)", "dest": "/generate" },
+    { "src": "/api/generate(.*)", "dest": "/api/generate.js" },
     { "src": "/", "dest": "/index.html" },
     { "src": "/(.*)", "dest": "/$1" }
   ]
