@@ -18,6 +18,6 @@
       }
     },
     { "src": "/generate", "dest": "/generate" },
-    { "src": "/(.*)", "dest": "/public/$1"}
+    { "src": "/(.*)", "dest": "/$1"}
   ]
 }
