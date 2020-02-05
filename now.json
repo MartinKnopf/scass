@@ -1,24 +1,4 @@
 {
   "version": 2,
   "name": "scass",
-  "builds": [
-    { "src": "generate/index.js", "use": "@now/node" }
-  ],
-  "env": {
-  },
-  "routes": [
-    { "src": "/(.*)", "continue": true, "headers" :
-      { 
-        "Access-Control-Allow-Origin": "https://scass.mknpf.now.sh",
-        "X-Frame-Options": "DENY",
-        "X-XSS-Protection": "1; mode=block",
-        "Cache-Control": "no-cache, no-store, must-revalidate",
-        "Pragma": "no-cache",
-        "X-Content-Type-Options": "nosniff"
-      }
-    },
-    { "src": "/generate(.*)", "dest": "/generate" },
-    { "src": "/", "dest": "/index.html"},
-    { "src": "/(.*)", "dest": "/$1"}
-  ]
 }
