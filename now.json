@@ -2,7 +2,6 @@
   "version": 2,
   "name": "scass",
   "builds": [
-    { "src": "public", "use": "@now/static-build" },
     { "src": "generate/index.js", "use": "@now/node" }
   ],
   "env": {
