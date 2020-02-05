@@ -9,7 +9,7 @@
   "routes": [
     { "src": "/(.*)", "continue": true, "headers" :
       { 
-        "Access-Control-Allow-Origin": "https://scass.now.sh",
+        "Access-Control-Allow-Origin": "https://scass.mknpf.now.sh",
         "X-Frame-Options": "DENY",
         "X-XSS-Protection": "1; mode=block",
         "Cache-Control": "no-cache, no-store, must-revalidate",
@@ -17,7 +17,8 @@
         "X-Content-Type-Options": "nosniff"
       }
     },
-    { "src": "/generate", "dest": "/generate" },
+    { "src": "/generate(.*)", "dest": "/generate" },
+    { "src": "/", "dest": "/index.html"},
     { "src": "/(.*)", "dest": "/$1"}
   ]
 }
