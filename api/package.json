@@ -13,7 +13,7 @@
     "lesspass-render-password": "^0.1.0"
   },
   "devDependencies": {
-    "mocha": "^5.2.0"
+    "mocha": "^10.2.0"
   },
   "engines": {
     "node": ">= 8.*"
